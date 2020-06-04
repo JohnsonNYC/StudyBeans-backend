@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
     def index
         reservations = Reservation.all
         if reservations
-            render json: reservations
+            render json: reservations, include: [:user, :shop]
         else
             render json: {status: 500, message: " Reservations not found"}
         end
@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     def show
         reservation = Reservation.find_by(id: params[:id])
         if reservation
-            render json:reservation
+            render json:reservation, include: [:user, :shop]
         else
             render json:{message: 'No reservation found'}
         end

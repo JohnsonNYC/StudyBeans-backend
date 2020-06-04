@@ -2,7 +2,7 @@ class RatingsController < ApplicationController
     def index
         ratings = Rating.all
         if ratings
-            render json: ratings
+            render json: ratings, include: [:user, :shop]
         else 
             render json: {status: 500, messages:'No ratings found'}
         end
@@ -10,8 +10,8 @@ class RatingsController < ApplicationController
 
     def show
         rating = Rating.find_by(id: params[:id])
-        if user
-            render json: rating
+        if rating
+            render json: rating, include: [:user, :shop]
         else
             render json: {message: "No rating with that id"}
         end
