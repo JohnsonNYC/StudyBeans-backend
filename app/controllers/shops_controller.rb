@@ -16,4 +16,14 @@ class ShopsController < ApplicationController
             render json:{message: 'No shop found'}
         end
     end
+
+    def update 
+        shop = Shop.find(params[:id])
+        if shop
+            shop.update(params.require(:shop).permit(:name, :lat, :lng, :seats))
+            render json: shop
+            else
+            render json: { message: 'No shop found with that id' }
+            end
+    end
 end
