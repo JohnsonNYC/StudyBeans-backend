@@ -22,6 +22,21 @@ class RatingsController < ApplicationController
         render json: rating
     end
 
+    def update
+        rating = Rating.find(params[:id])
+        if rating
+            rating.update(rating_params)
+            render json: rating
+        else
+            render json: { message: 'No shop found with that id' }
+        end
+    end
+
+    def destroy
+        rating = Rating.find(params[:id])
+        rating.destroy
+    end
+
     private
     def ratings_params
         params.require(:rating).permit(:user_id, :shop_id, :stars,:comments)
