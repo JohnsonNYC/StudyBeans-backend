@@ -36,6 +36,15 @@ shop16 = Shop.create(name:'Rakka Cafe', address: '81 St Marks Pl', lat:'40.72789
 shop17 = Shop.create(name:'Atlas Cafe', address: '73 2nd Ave', lat:'40.726500', lng: '-73.989539',seats: 4)
 shop17 = Shop.create(name:'Brooks Brothers Red Fleece Cafe', address: '901 Broadway At, E 20th St', lat:'40.739187', lng: '-73.990005',seats: 0)
 
-reservation1 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now )
+reservation1 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation2 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation3 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation4 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation5 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation6 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation7 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation8 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation9 = Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
+reservation10= Reservation.create(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, seats: 4, time: Time.now.strftime("%I:%M:%S %p") )
 
 rating1 = Rating.create!(user_id: User.all.sample.id, shop_id: Shop.all.sample.id, stars: 5, comments: "Oh yeahh")

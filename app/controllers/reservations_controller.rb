@@ -22,6 +22,11 @@ class ReservationsController < ApplicationController
         render json:reservation
     end
 
+    def destroy
+        reservation = Reservation.find(params[:id])
+        reservation.destroy
+    end
+
     private
     def reservation_params 
         params.require(:reservation).permit(:user_id,:shop_id,:seats,:time)
